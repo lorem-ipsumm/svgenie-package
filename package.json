@@ -1,0 +1,29 @@
+{
+  "name": "svgenie",
+  "version": "0.1.1",
+  "module": "dist/index.js",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "svgenie": "./dist/cli.js"
+  },
+  "scripts": {
+    "dev": "bun run ./bin/cli.ts",
+    "build": "bun build ./bin/cli.ts --outdir dist --target node --external node-fetch && chmod +x dist/cli.js",
+    "prepublishOnly": "bun run build"
+  },
+  "keywords": ["svg", "react", "component", "converter", "typescript"],
+  "author": "Lorem Ipsum",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
