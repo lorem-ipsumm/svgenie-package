@@ -8,5 +8,5 @@ All imported components come with a `props` argument that allows you to easily p
 
 1. Go to https://svgenie.xyz and past in your desired SVG code
 2. Click the `Add to project` button
-3. A popup window will appear with a command that looks like `npx svgenie@latest [unique-id-for-component]`
+3. A popup window will appear with a command that looks like `npx svgenie@latest UNIQUE-ID-FOR-COMPONENT`
 4. Run the command in your project directory and your new React ready component will be imported
