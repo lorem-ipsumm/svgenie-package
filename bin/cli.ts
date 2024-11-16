@@ -43,12 +43,6 @@ async function main() {
     const { id, source_code, component_code, component_name } =
       await fetchComponent(url);
 
-    // create components directory if it doesn't exist
-    const componentsDir = path.join(process.cwd(), "components");
-    if (!fs.existsSync(componentsDir)) {
-      fs.mkdirSync(componentsDir);
-    }
-
     // prompt for filename
     const filename = await askQuestion(
       `Enter filename (without extension. Leave blank for ${component_name}): `
@@ -56,11 +50,17 @@ async function main() {
     // use component_name as fallback
     const finalFilename = filename.trim() || component_name; 
 
+    // create components directory if it doesn't exist
+    const componentsDir = path.join(process.cwd(), "SVGenie");
+    if (!fs.existsSync(componentsDir)) {
+      fs.mkdirSync(componentsDir);
+    }
+
     // write the component file
     const filePath = path.join(componentsDir, `${finalFilename}.tsx`);
     fs.writeFileSync(filePath, component_code);
 
-    console.log(`Successfully imported component as ${finalFilename}.tsx`);
+    console.log(`Successfully imported component in svgenie/${finalFilename}.tsx`);
   } catch (error) {
     console.error("Error:", (error as Error).message);
     process.exit(1);
