@@ -36,7 +36,7 @@ async function main() {
   }
 
   const id = process.argv[2];
-  const baseUrl = "https://svgenie.netlify.app/fetch-component/";
+  const baseUrl = "https://svgenie.xyz/fetch-component/";
   const url = baseUrl + id;
 
   try {
