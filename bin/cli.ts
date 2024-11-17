@@ -60,7 +60,7 @@ async function main() {
     const filePath = path.join(componentsDir, `${finalFilename}.tsx`);
     fs.writeFileSync(filePath, component_code);
 
-    console.log(`Successfully imported component in svgenie/${finalFilename}.tsx`);
+    console.log(`Successfully imported component in SVGenie/${finalFilename}.tsx`);
   } catch (error) {
     console.error("Error:", (error as Error).message);
     process.exit(1);
